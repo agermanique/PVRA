@@ -7,11 +7,6 @@ window.onload = init;
 function init() {
   const scene = document.querySelector('a-scene');
 
-      if (scene.hasLoaded) {
-        // run();
-      } else {
-        scene.addEventListener('loaded', run);
-      }
 
       
 }
@@ -25,12 +20,17 @@ function init() {
       window.cube=this;
 
       this.el.addEventListener('mouseenter', function () {
-          this.setAttribute('rotation',this.getAttribute('rotation'));
+          var y = this.getAttribute('rotation').y;
+          // rot_anim.setAttribute('from','0 '+y+' 0');
+          this.setAttribute('rotation','0 '+y+' 0');
+          
           this.emit('letsRotate');          
       });
 
       this.el.addEventListener('mouseleave', function() {
-        rot_anim.stop();
+        // rot_anim.stop();
+        this.emit('stopRotate')
+        
       })
     }
   });
