@@ -31,7 +31,7 @@ class Audio {
         //     player.src = stream;
         // }
         video.src = window.URL.createObjectURL(stream);
-        setInterval(getAverageRGB, 1000)
+        setInterval(getAverageRGB, 500)
         var input = this.audioCtx.createMediaStreamSource(stream)
         var processor = this.audioCtx.createScriptProcessor(1024, 1, 1);
 
