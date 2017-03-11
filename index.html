@@ -19,12 +19,13 @@
       <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
     </a-assets>
     
-    <!--<a-box src="#boxTexture" id="box" position="0 2 -5" rotation="0 45 45"
-    scale="2 2 2"></a-box> -->
-
       <a-sky src="#skyTexture"></a-sky>
 
-      <a-box id="box" position="0 2 -5" rotation="0 45 45" scale="1 1 1" scale-on-click="to: 2.2 2.2 2.2"></a-box>
+      <a-box id="box" position="0 2 -5" scale="1 1 1" scale-on-click="to: 2.2 2.2 2.2"><a-animation id="rot_anim" attribute="rotation"
+          begin="letsRotate"
+          fill="forwards"
+          to="0 360 0" 
+          dur="2000"></a-animation></a-box>
       
       <a-camera>
         <a-cursor></a-cursor>
