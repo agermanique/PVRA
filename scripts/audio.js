@@ -17,7 +17,8 @@ class Audio {
         this.analyser.maxDecibels = -10;
         this.analyser.smoothingTimeConstant = 0.85;
         this.bufferLength
-        navigator.mediaDevices.getUserMedia({ audio: true, video: true })
+        
+        navigator.mediaDevices.getUserMedia({ audio: true, video: { facingMode: { exact: "environment" } }})
             .then(this.handleSuccess.bind(this))
     }
 
