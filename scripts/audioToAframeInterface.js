@@ -16,4 +16,4 @@ class AudioToAframe {
     }
 
 }
-window.audio = new AudioToAframe()
+//window.audio = new AudioToAframe()
