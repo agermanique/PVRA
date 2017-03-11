@@ -6,6 +6,7 @@ console.log('THREE',THREE);
       to: {default: '2.5 2.5 2.5'}
     },
     init: function () {
+      window.cube=this;
       var data = this.data;
       var isAnimationStarted = false;
 
