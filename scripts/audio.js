@@ -95,6 +95,7 @@ class Audio {
 
             window.cube.el.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] *6)}${Math.round(this.outputArray[30] * 6)}`);
 
+
         }
     }
 }
