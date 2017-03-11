@@ -29,6 +29,7 @@ console.log('cube js is loaded!');
     },
     init: function () {
         console.log('init');
+      window.cube=this;
       var data = this.data;
       console.log('data :', data);
       this.el.addEventListener('click', function () {
@@ -41,14 +42,14 @@ console.log('cube js is loaded!');
   });
 
 
-  AFRAME.registerComponent('rotate-on-click', {
-    schema: {
-        to: {default: '360 405 45'}
-    },
-    init: function () {
-        var data = this.data;
-        this.el.addEventListener('click', function() {
-            this.setAttribute('rotate', data.to);
-        })
-    }
-  })
+  // AFRAME.registerComponent('rotate-on-click', {
+  //   schema: {
+  //       to: {default: '360 405 45'}
+  //   },
+  //   init: function () {
+  //       var data = this.data;
+  //       this.el.addEventListener('click', function() {
+  //           this.setAttribute('rotate', data.to);
+  //       })
+  //   }
+  // })
