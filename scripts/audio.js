@@ -1,4 +1,5 @@
 
+var video = document.querySelector("#videoElement");
 
 class Audio {
 
@@ -16,7 +17,7 @@ class Audio {
         this.analyser.maxDecibels = -10;
         this.analyser.smoothingTimeConstant = 0.85;
         this.bufferLength
-        navigator.mediaDevices.getUserMedia({ audio: true, video: false })
+        navigator.mediaDevices.getUserMedia({ audio: true, video: true })
             .then(this.handleSuccess.bind(this))
     }
 
@@ -28,6 +29,8 @@ class Audio {
         // } else {
         //     player.src = stream;
         // }
+        video.src = window.URL.createObjectURL(stream);
+
         var input = this.audioCtx.createMediaStreamSource(stream)
         var processor = this.audioCtx.createScriptProcessor(1024, 1, 1);
 
@@ -91,9 +94,9 @@ class Audio {
             //console.log(`#${Math.round(this.outputArray[0] * 5)}${Math.round(this.outputArray[15] * 5)}${Math.round(this.outputArray[30] * 5)}`)
             // let rotate = window.cube.el.getAttribute('rotation')
             // window.cube.el.setAttribute('rotation', { x: rotate.x, y: rotate.y, z: rotate.z  + Math.round(this.outputArray[15])});            
-            window.cube.el.setAttribute('scale', { x: this.outputArray[0], y: this.outputArray[16], z: this.outputArray[30]});
+            window.cube.el.setAttribute('scale', { x: this.outputArray[0], y: this.outputArray[16], z: this.outputArray[30] });
 
-            window.cube.el.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] *6)}${Math.round(this.outputArray[30] * 6)}`);
+            window.cube.el.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] * 6)}${Math.round(this.outputArray[30] * 6)}`);
 
 
         }
