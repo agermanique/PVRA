@@ -1,11 +1,12 @@
 console.log('cube js is loaded!');
 console.log('THREE',THREE);
+window.elementWorld = [];
+
 
 window.onload = init;
 
 
 function init() {
-  window.elementWorld = [];
   
   const scene = document.querySelector('a-scene');
 
