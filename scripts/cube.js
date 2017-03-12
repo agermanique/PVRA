@@ -5,6 +5,8 @@ window.onload = init;
 
 
 function init() {
+  window.elementWorld = [];
+  
   const scene = document.querySelector('a-scene');
 
 
@@ -17,7 +19,6 @@ function init() {
       true: {default: true}
     },
     init: function () {
-      window.elementWorld;
       window.elementWorld.push(this);
 
       this.el.addEventListener('mouseenter', function () {
