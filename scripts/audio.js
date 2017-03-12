@@ -97,8 +97,8 @@ class Audio {
             // window.cube.el.setAttribute('rotation', { x: rotate.x, y: rotate.y, z: rotate.z  + Math.round(this.outputArray[15])});   
             for(var elem in window.elementWorld) {
                 console.log('elem : ', elem);
-                elem.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
-                elem.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] * 6)}${Math.round(this.outputArray[30] * 6)}`);
+                window.elementWorld[elem].setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
+                window.elementWorld[elem].setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] * 6)}${Math.round(this.outputArray[30] * 6)}`);
             }         
             // window.cube.el.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
 
