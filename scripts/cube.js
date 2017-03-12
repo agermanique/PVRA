@@ -20,9 +20,10 @@ function init() {
 }
 
 function next(sky, assets) {
-  let asset
+  let asset;
+  let assetCube;
   let i = 0
-  let skySrc = sky.getAttribute('src').substring(1)
+  let skySrc = sky.getAttribute('src').substring(1);
 
   assets.forEach(a => {
     let src = a.getAttribute('src').substring(4)
@@ -32,16 +33,27 @@ function next(sky, assets) {
         asset = assets[i + 1].getAttribute('src')
         asset = asset.substring(4)
         asset = asset.substring(0, asset.length - 4)
+        if (i < assets.length - 2)
+          assetCube = assets[i + 2].getAttribute('src').substring(4);
+        else
+          assetCube = assets[0].getAttribute('src').substring(4);
+
       } else {
         asset = assets[0].getAttribute('src')
         asset = asset.substring(4)
         asset = asset.substring(0, asset.length - 4)
+        assetCube = assets[i + 1].getAttribute('src').substring(4);
       }
+      assetCube = assetCube.substring(0, asset.length - 4)
+
     }
     i++
   })
-  if (asset)
+  if (asset)  {
+    console.log('assetCube : ', assetCube);
     sky.setAttribute('src', '#' + asset)
+    document.querySelector('.'+asset).setAttribute('src', '#link_to_'+ assetCube)
+  }
 }
 
 AFRAME.registerComponent('rotate-on-enter', {
@@ -60,10 +72,26 @@ AFRAME.registerComponent('rotate-on-enter', {
     });
 
     this.el.addEventListener('mouseleave', function () {
-      // rot_anim.stop();
       this.emit('stopRotate')
 
-    })
+    });
+
+    this.el.addEventListener('click', function () {
+      console.log('click!')
+        if ( this == document.querySelector('#box_update')) {
+          var sky = document.querySelector('a-sky')
+          var assets = document.querySelectorAll('.background')
+          console.log('here');
+          console.log('assets : ', assets);
+          next(sky, assets)
+
+            // document.querySelector('a-sky').setAttribute('src', '#Place_d_Arme_1');
+        }
+
+
+    });
+
+
+
   }
 });
-

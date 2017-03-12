@@ -1,78 +1,85 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <meta charset="utf-8">
-  <title>Hello, World! - A-Frame</title>
-  <meta name="description" content="Hello, World! - A-Frame">
-  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-  <script src="./scripts/Pizzicato.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/3.7.1/firebase-database.js"></script>
+  <head>
+    <meta charset="utf-8">
+    <title>PVRA</title>
+    <meta name="description" content="PVRA">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="./scripts/Pizzicato.js"></script>
 
-  <style>
-    #videoElement {
-      width: 50px;
-      height: 35px;
-      background-color: #666;
-      visibility: hidden;
-      position: absolute;
-    }
-    
-    #changeback {
-      position: fixed;
-      top: 0;
-      z-index: 2;
-    }
-  </style>
-</head>
+    <style>
+      #videoElement {
+        width: 50px;
+        height: 35px;
+        background-color: #666;
+        visibility: hidden;
+        position: absolute;
+      }
 
-<body>
+      #changeback {
+        position: fixed;
+        top: 0;
+        z-index: 2;
+      }
+    </style>
+  </head>
 
-  <video autoplay="true" id="videoElement" muted>
+  <body>
 
-  </video>
-  <a-scene>
-    <a-assets>
-      <img class="background" id="Casemate_1" src="img/Casemate_1.jpg">
-      <img class="background" id="Casemate_2" src="img/Casemate_2.jpg">
-      <img class="background" id="Clausen_3_G" src="img/Clausen_3_G.jpg">
-      <img class="background" id="Passerelle" src="img/Passerelle.jpg">
-      <img class="background" id="Place_d_Arme_1" src="img/Place_d_Arme_1.jpg">
-      <img id="team1" src="img/pvra_team_1.jpg" />
-      <img id="team2" src="img/pvra_team_2.jpg" />
-      <img id="team3" src="img/pvra_team_3.jpg" />
-      <img id="adneom" src="img/adneom.jpg" />
-    </a-assets>
+    <video autoplay="true" id="videoElement" muted>
 
-    <a-sky src="#Casemate_1"></a-sky>
-    <a-box src="#team1" id="box" position="0 2 -7" rotate="-5 45 0" scale="2 2 2" rotate-on-enter="true">
-      <a-animation id="rot_anim" attribute="rotation" begin="letsRotate" end="stopRotate" to="0 180 0" dur="2500" repeat="indefinite"></a-animation>
-    </a-box>
+    </video>
+    <a-scene>
+      <a-assets>
+        <img class="background" id="Casemate_1" src="img/Casemate_1.jpg">
+        <img class="background" id="Casemate_2" src="img/Casemate_2.jpg">
+        <img class="background" id="Clausen_3_G" src="img/Clausen_3_G.jpg">
+        <img class="background" id="Passerelle" src="img/Passerelle.jpg">
+        <img class="background" id="Place_d_Arme_1" src="img/Place_d_Arme_1.jpg">
+        <img id="link_to_Casemate_1" src="img/link_to_Casemate_1.jpg" />
+        <img id="link_to_Casemate_2" src="img/link_to_Casemate_2.jpg" />
+        <img id="box_link_to_Clausen_3_G" src="img/link_to_Clausen_3_G.jpg" />
+        <img id="link_to_Passerelle" src="img/link_to_Passerelle.jpg" />
+        <img id="link_to_Place_d_Arme_1" src="img/link_to_Place_d_Arme_1.jpg" />
+        <img id="team1" src="img/pvra_team_1.jpg" />
+        <img id="team2" src="img/pvra_team_2.jpg" />
+        <img id="team3" src="img/pvra_team_3.jpg" />
+        <img id="adneom" src="img/adneom.jpg" />
+      </a-assets>
 
-    <a-tetrahedron src="#team3" color="tomato" position="10 2 -7" scale="2 2 2" rotate-on-enter="true">
-      <a-animation attribute="rotation" begin="letsRotate" end="stopRotate" to="0 360 0" dur="2500" repeat="indefinite"></a-animation>
-    </a-tetrahedron>
+      <a-sky src="#Casemate_1"></a-sky>
+      <a-box src="#team1" id="box" position="0 2 -7" rotate="-5 45 0" scale="2 2 2" rotate-on-enter="true">
+        <a-animation id="rot_anim" attribute="rotation" begin="letsRotate" end="stopRotate" to="0 180 0" dur="2500" repeat="indefinite"></a-animation>
+      </a-box>
 
-    <a-sphere src="#team2" position="20 2 20" rotate-on-enter="true" radius="2.5">
-      <a-animation attribute="rotation" begin="letsRotate" end="stopRotate" to="0 360 0" dur="2500" repeat="indefinite"></a-animation>
-    </a-sphere>
+      <a-tetrahedron src="#team3" color="tomato" position="10 2 -7" scale="2 2 2" rotate-on-enter="true">
+        <a-animation attribute="rotation" begin="letsRotate" end="stopRotate" to="0 360 0" dur="2500" repeat="indefinite"></a-animation>
+      </a-tetrahedron>
 
-    <a-dodecahedron src="#adneom" position="-20 2 10" radius="2.5" rotate-on-enter="true">
-      <a-animation attribute="rotation" begin="letsRotate" end="stopRotate" to="0 360 0" dur="2500" repeat="indefinite"></a-animation>
-    </a-dodecahedron>
+      <a-sphere src="#team2" position="20 2 20" rotate-on-enter="true" radius="2.5">
+        <a-animation attribute="rotation" begin="letsRotate" end="stopRotate" to="0 360 0" dur="2500" repeat="indefinite"></a-animation>
+      </a-sphere>
+
+      <a-dodecahedron src="#adneom" position="-20 2 10" radius="2.5" rotate-on-enter="true">
+        <a-animation attribute="rotation" begin="letsRotate" end="stopRotate" to="0 360 0" dur="2500" repeat="indefinite"></a-animation>
+      </a-dodecahedron>
+
+      <a-box src="#box_link_to_Clausen_3_G" id="box_update" position="0.8 1.5 10" rotate="-5 45 0" scale="2 2 2" rotate-on-enter="true">
+        <a-animation id="rot_anim" attribute="rotation" begin="letsRotate" end="stopRotate" to="0 180 0" dur="2500" repeat="indefinite"></a-animation>
+      </a-box>
 
 
-    <a-camera id="camera">
-      <a-cursor></a-cursor>
-    </a-camera>
-  </a-scene>
-  <button id="changeback" style="display: none">change background</button>
-  <script src="./scripts/audio.js"></script>
-  <script src="./scripts/cube.js"></script>
-  <script src="./scripts/audioToAframeInterface.js"></script>
-  <script src="./scripts/video.js"></script>
-  <script src="./scripts/firebaseRead.js"></script>
+      <a-camera id="camera">
+        <a-cursor></a-cursor>
+      </a-camera>
+    </a-scene>
+    <button id="changeback">change background</button>
+    <script src="./scripts/audio.js"></script>
+    <script src="./scripts/cube.js"></script>
+    <script src="./scripts/audioToAframeInterface.js"></script>
+    <script src="./scripts/video.js"></script>
+
+  </body>
 
 </html>
