@@ -17,7 +17,8 @@ function init() {
       true: {default: true}
     },
     init: function () {
-      window.el.push(this);
+      window.elementWorld;
+      window.elementWorld.push(this);
 
       this.el.addEventListener('mouseenter', function () {
           var y = this.getAttribute('rotation').y;
