@@ -94,8 +94,12 @@ class Audio {
             //console.log({ x: Math.round(this.outputArray[0] * 10), y: Math.round(this.outputArray[15] * 10), z: Math.round(this.outputArray[30] * 10) })
             //console.log(`#${Math.round(this.outputArray[0] * 5)}${Math.round(this.outputArray[15] * 5)}${Math.round(this.outputArray[30] * 5)}`)
             // let rotate = window.cube.el.getAttribute('rotation')
-            // window.cube.el.setAttribute('rotation', { x: rotate.x, y: rotate.y, z: rotate.z  + Math.round(this.outputArray[15])});            
-            window.cube.el.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
+            // window.cube.el.setAttribute('rotation', { x: rotate.x, y: rotate.y, z: rotate.z  + Math.round(this.outputArray[15])});   
+            for(var el in window.cube) {
+                console.log('el : ', el);
+                el.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
+            }         
+            // window.cube.el.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
 
             window.cube.el.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] * 6)}${Math.round(this.outputArray[30] * 6)}`);
 
