@@ -1,86 +1,45 @@
-# A-Frame Boilerplate
+# PVRA
 
-Boilerplate for creating WebVR scenes using A-Frame.
+PVRA (Pizza Virtual Reality Pizza) application to use with remotePVRA (https://github.com/agermanique/remotePVRA)
+
+This application will use sound of your mic to modify visual reality & use back camera to create sound depending on colors you're
+pointing.
+
+You'll be able to teleporte yourself in differents places of Luxembourg with the remote app.
+
+Used Boilerplate from A-Frame.
 
 ## Getting Started
 
-There are two easy options for obtaining this A-Frame scene. It's then up to you to make it your own!
+To launch the project : 
+npm install && npm start
+open http://localhost:3000/
 
-### <sup>Option 1:</sup> Download the ZIP kit 📦
+## Link to test it, you can open this link with your phone & use Google Cardboard
 
-[<img src="http://i.imgur.com/UVPZoM0.png" width="200">](https://github.com/aframevr/aframe-boilerplate/archive/master.zip)
+Best browser to use : Opera
+Best OS to use : Android
+PVRA application : https://agermanique.github.io/PVRA/
 
-After you have __[downloaded and extracted this `.zip` file](https://github.com/aframevr/aframe-boilerplate/archive/master.zip)__ containing the contents of this repo, open the resulting directory, and you'll be have your scene ready in these few steps:
+## Link for the remote to test the teleportation, you can open it with a second phone or even your browser on your computer
 
-    npm install && npm start
-    open http://localhost:3000/
+remote PVRA application : https://agermanique.github.io/remotePVRA/
 
-<hr>
+## Story
 
-### <small><sup>Option 2:</sup> Fork this Git repo 🍴🐙
+### Game of code 2017
 
-Alternatively, you can __[fork this repo](https://github.com/aframevr/aframe-boilerplate/fork)__ to get started, if you'd like to maintain a Git workflow.
+This is the VR Application we have developed for the Hackathon Game of Code 2017 in Luxembourg.
 
-After you have __[forked this repo](https://github.com/aframevr/aframe-boilerplate/fork)__, clone a copy of your fork locally and you'll be have your scene ready in these few steps:
+### Team
 
-    git clone https://github.com/aframevr/aframe-boilerplate.git
-    cd aframe-boilerplate && rm -rf .git && npm install && npm start
-    open http://localhost:3000/
+Antoine Germanique
+Valentin Lhommeau
+Samir Hanini
 
-> :iphone: **Mobile pro tip:** Upon starting the development server, the URL will be logged to the console. Load that URL from a browser on your mobile device. (If your mobile phone and computer are not on the same LAN, consider using [ngrok](https://ngrok.com/) for local development and testing. [Browsersync](https://www.browsersync.io/) is also worth a gander.)
+### Company represented
 
-<hr>
-
-### <small><sup>Option 3:</sup> Fork this CodePen example 🍴💾✒️
-
-Or, you can simply __[fork this CodePen example](http://codepen.io/team/mozvr/pen/BjygdO?editors=100)__ to dive right in. Enjoy!
-
-
-## Publishing your scene
-
-If you don't already know, GitHub offers free and awesome publishing of static sites through __[https://pages.github.com/](GitHub Pages)__.
-
-To publish your scene to your personal GitHub Pages:
-
-    npm run deploy
-
-And, it'll now be live at __http://`your_username`.github.io/__ :)
-
-<hr>
-
-To know which GitHub repo to deploy to, the `deploy` script first looks at the optional [`repository` key](https://docs.npmjs.com/files/package.json#repository) in the [`package.json` file](package.json) (see [npm docs](https://docs.npmjs.com/files/package.json#repository) for sample usage). If the `repository` key is missing, the script falls back to using the local git repo's remote origin URL (you can run the local command `git remote -v` to see all your remotes; also, you may refer to the [GitHub docs](https://help.github.com/articles/about-remote-repositories/) for more information).
-
-<hr>
-
-## Still need Help?
-
-### Installation
-
-First make sure you have Node installed.
-
-On Mac OS X, it's recommended to use [Homebrew](http://brew.sh/) to install Node + [npm](https://www.npmjs.com):
-
-    brew install node
-
-To install the Node dependencies:
-
-    npm install
-
-
-### Local Development
-
-To serve the site from a simple Node development server:
-
-    npm start
-
-Then launch the site from your favourite browser:
-
-[__http://localhost:3000/__](http://localhost:3000/)
-
-If you wish to serve the site from a different port:
-
-    PORT=8000 npm start
-
+ADNEOM
 
 ## License
 

@@ -11,7 +11,6 @@ class ScriptRemote {
         };
 
         firebase.initializeApp(config);
-        // document.querySelector("#letsGo").onclick = this.enterTheVoid;
         var starCountRef = firebase.database().ref('/isActive');
         starCountRef.on('value', function (snapshot) {
             const sky = document.querySelector('a-sky')

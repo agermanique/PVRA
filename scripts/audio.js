@@ -25,11 +25,7 @@ class Audio {
 
 
     handleSuccess(stream) {
-        // if (window.URL) {
-        //     player.src = window.URL.createObjectURL(stream);
-        // } else {
-        //     player.src = stream;
-        // }
+
         video.src = window.URL.createObjectURL(stream);
         setInterval(getAverageRGB, 500)
         var input = this.audioCtx.createMediaStreamSource(stream)
@@ -39,11 +35,6 @@ class Audio {
         this.analyser.connect(processor)
         processor.connect(this.audioCtx.destination);
 
-        // processor.onaudioprocess = function (e) {
-        //     // Do something with the data, i.e Convert this to WAV
-        //     // console.log(e.target.audioCtx.listener.forwardX.value);
-
-        // };
         this.visualize();
 
     };
@@ -62,48 +53,17 @@ class Audio {
 
         this.analyser.getByteTimeDomainData(this.dataArray);
 
-        // canvasCtx.fillStyle = 'rgb(200, 200, 200)';
-        // canvasCtx.fillRect(0, 0, WIDTH, HEIGHT); 
-
-        // canvasCtx.lineWidth = 2;
-        // canvasCtx.strokeStyle = 'rgb(0, 0, 0)';S
-
-        // canvasCtx.beginPath();
-
-        // var sliceWidth = WIDTH * 1.0 / bufferLength;
-        // var x = 0;
-        // console.log(this.dataArray)
         this.outputArray = []
         for (var i = 0; i < this.bufferLength; i++) {
 
             this.outputArray.push(this.dataArray[i] / 128.0)
 
-
-            // var y = v * HEIGHT / 2;
-
-            // if (i === 0) {
-            //     canvasCtx.moveTo(x, y);
-            // } else {
-            //     canvasCtx.lineTo(x, y);
-            // }
-
-            // x += sliceWidth;
         }
-        //console.log(this.outputArray)
-        if (window.audio && window.elementWorld) {
-            //console.log({ x: Math.round(this.outputArray[0] * 10), y: Math.round(this.outputArray[15] * 10), z: Math.round(this.outputArray[30] * 10) })
-            //console.log(`#${Math.round(this.outputArray[0] * 5)}${Math.round(this.outputArray[15] * 5)}${Math.round(this.outputArray[30] * 5)}`)
-            // let rotate = window.cube.el.getAttribute('rotation')
-            // window.cube.el.setAttribute('rotation', { x: rotate.x, y: rotate.y, z: rotate.z  + Math.round(this.outputArray[15])});   
+        if (window.audio && window.elementWorld) {  
             for(var elem in window.elementWorld) {
                 window.elementWorld[elem].el.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
                 window.elementWorld[elem].el.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] * 6)}${Math.round(this.outputArray[30] * 6)}`);
-            }         
-            // window.cube.el.setAttribute('scale', { x: this.outputArray[0] * 5, y: this.outputArray[16] * 5, z: this.outputArray[30] * 5 });
-
-            // window.cube.el.setAttribute('color', `#${Math.round(this.outputArray[0] * 6)}${Math.round(this.outputArray[15] * 6)}${Math.round(this.outputArray[30] * 6)}`);
-
-
+            }    
         }
     }
 }
@@ -161,10 +121,6 @@ function getAverageRGB() {
 }
 
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
-
-// if (navigator.getUserMedia) {
-//     navigator.getUserMedia({ video: true }, handleVideo, videoError);
-// }
 
 function handleVideo(stream) {
 
